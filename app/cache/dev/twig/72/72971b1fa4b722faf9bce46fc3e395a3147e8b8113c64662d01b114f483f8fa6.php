@@ -15,12 +15,11 @@ class __TwigTemplate_057dc27d4077b76b2ce25dc7b791358a3723c9bedd61afa8e662f7615c8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_426fbe736164663b8211a4a98fd57c0930ab7e10ae69fcb93c3a169ef875ab5c = $this->env->getExtension("native_profiler");
-        $__internal_426fbe736164663b8211a4a98fd57c0930ab7e10ae69fcb93c3a169ef875ab5c->enter($__internal_426fbe736164663b8211a4a98fd57c0930ab7e10ae69fcb93c3a169ef875ab5c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Default:addUser.html.twig"));
+        $__internal_d394aa2cbd9371982c880e87fd0875ab9daaa3fa813ff1c99f01d6c615503460 = $this->env->getExtension("native_profiler");
+        $__internal_d394aa2cbd9371982c880e87fd0875ab9daaa3fa813ff1c99f01d6c615503460->enter($__internal_d394aa2cbd9371982c880e87fd0875ab9daaa3fa813ff1c99f01d6c615503460_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Default:addUser.html.twig"));
 
-        // line 1
-        echo "
-<!DOCTYPE html>
+        // line 2
+        echo "<!DOCTYPE html>
 <html lang=\"en\">
   <head>
     <meta charset=\"utf-8\">
@@ -159,9 +158,38 @@ class __TwigTemplate_057dc27d4077b76b2ce25dc7b791358a3723c9bedd61afa8e662f7615c8
         // line 92
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "_token", array()), 'widget');
         echo "
-    ";
+    <div class=\"duplicateForm\">  
+    <div class=\"tags\">      
+    <div class=\"control-group\">
+      <!-- Username -->
+      <label class=\"control-label\"  for=\"username\">Email Id</label>
+      <div class=\"controls\">
+";
         // line 100
-        echo "    <div class=\"control-group\">
+        echo "        ";
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "userdetailss", array()), "vars", array()), "prototype", array()), "emailId", array()), 'widget');
+        echo "
+      </div>
+    </div>
+    <div class=\"control-group\">
+      <!-- Username -->
+      <label class=\"control-label\"  for=\"username\">Mobile No</label>
+      <div class=\"controls\">
+";
+        // line 108
+        echo "        ";
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "userdetailss", array()), "vars", array()), "prototype", array()), "mobileNo", array()), 'widget');
+        echo "
+      </div>
+    </div>
+      
+      
+      </div>
+      </div>
+      <input type=\"hidden\" id=\"indexCount\" value=\"1\">
+      <a href=\"javascript:void(0)\" onclick=\"duplicateForm(indexCount.value)\"> Add Email / Mobile No</a>
+      
+    <div class=\"control-group\">
       <!-- Username -->
       
       <div class=\"controls\">
@@ -177,20 +205,45 @@ class __TwigTemplate_057dc27d4077b76b2ce25dc7b791358a3723c9bedd61afa8e662f7615c8
     <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js\"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src=\"";
-        // line 115
+        // line 133
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
+    
+    <script>
+    
+    ";
+        // line 164
+        echo "    
+    
+    
+
+function duplicateForm(index){
+    
+    var formdata = \$( \".tags\" ).clone().appendTo( \".duplicateForm\" );
+    
+    \$('.duplicateForm input[name=\"users[userdetailss][][emailId]\"]');
+    
+            
+            var OriginalFiled = \$('.duplicateForm :input[name=\"users[userdetailss][][emailId]\"]');
+    
+    
+    
+}
+    
+</script>
   </body>
 </html>
 
 
 ";
-        // line 121
+        // line 187
         echo "
+
+
 
 ";
         
-        $__internal_426fbe736164663b8211a4a98fd57c0930ab7e10ae69fcb93c3a169ef875ab5c->leave($__internal_426fbe736164663b8211a4a98fd57c0930ab7e10ae69fcb93c3a169ef875ab5c_prof);
+        $__internal_d394aa2cbd9371982c880e87fd0875ab9daaa3fa813ff1c99f01d6c615503460->leave($__internal_d394aa2cbd9371982c880e87fd0875ab9daaa3fa813ff1c99f01d6c615503460_prof);
 
     }
 
@@ -206,10 +259,10 @@ class __TwigTemplate_057dc27d4077b76b2ce25dc7b791358a3723c9bedd61afa8e662f7615c8
 
     public function getDebugInfo()
     {
-        return array (  189 => 121,  181 => 115,  164 => 100,  160 => 92,  154 => 89,  149 => 87,  141 => 82,  136 => 80,  128 => 75,  123 => 73,  115 => 68,  110 => 66,  102 => 61,  97 => 59,  89 => 54,  84 => 52,  76 => 47,  71 => 45,  60 => 38,  35 => 12,  22 => 1,);
+        return array (  240 => 187,  216 => 164,  209 => 133,  180 => 108,  169 => 100,  159 => 92,  153 => 89,  148 => 87,  140 => 82,  135 => 80,  127 => 75,  122 => 73,  114 => 68,  109 => 66,  101 => 61,  96 => 59,  88 => 54,  83 => 52,  75 => 47,  70 => 45,  59 => 38,  34 => 12,  22 => 2,);
     }
 }
-/* */
+/* {#{{dump(form.userdetailss)}}#}*/
 /* <!DOCTYPE html>*/
 /* <html lang="en">*/
 /*   <head>*/
@@ -301,13 +354,31 @@ class __TwigTemplate_057dc27d4077b76b2ce25dc7b791358a3723c9bedd61afa8e662f7615c8
 /*       </div>*/
 /*     </div>*/
 /*       {{ form_widget(form._token) }}*/
-/*     {#<div class="control-group">*/
+/*     <div class="duplicateForm">  */
+/*     <div class="tags">      */
+/*     <div class="control-group">*/
 /*       <!-- Username -->*/
-/*       <label class="control-label"  for="username">{{ form_label(form.emailId) }}</label>*/
+/*       <label class="control-label"  for="username">Email Id</label>*/
 /*       <div class="controls">*/
-/*         {{ form_widget(form.emailId) }}*/
+/* {#        {{ form_widget(form.userdetailss.emailId) }}#}*/
+/*         {{ form_widget(form.userdetailss.vars.prototype.emailId) }}*/
 /*       </div>*/
-/*     </div>#}*/
+/*     </div>*/
+/*     <div class="control-group">*/
+/*       <!-- Username -->*/
+/*       <label class="control-label"  for="username">Mobile No</label>*/
+/*       <div class="controls">*/
+/* {#        {{ form_widget(form.userdetailss.emailId) }}#}*/
+/*         {{ form_widget(form.userdetailss.vars.prototype.mobileNo) }}*/
+/*       </div>*/
+/*     </div>*/
+/*       */
+/*       */
+/*       </div>*/
+/*       </div>*/
+/*       <input type="hidden" id="indexCount" value="1">*/
+/*       <a href="javascript:void(0)" onclick="duplicateForm(indexCount.value)"> Add Email / Mobile No</a>*/
+/*       */
 /*     <div class="control-group">*/
 /*       <!-- Username -->*/
 /*       */
@@ -324,11 +395,61 @@ class __TwigTemplate_057dc27d4077b76b2ce25dc7b791358a3723c9bedd61afa8e662f7615c8
 /*     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>*/
 /*     <!-- Include all compiled plugins (below), or include individual files as needed -->*/
 /*     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>*/
+/*     */
+/*     <script>*/
+/*     */
+/*     {#var $collectionHolder;*/
+/* */
+/* // setup an "add a tag" link*/
+/*     var $addTagLink = $('<a href="#" class="add_tag_link">Add Details</a>');*/
+/*     */
+/*     var $newLinkLi = $('<li></li>').append($addTagLink);*/
+/*     */
+/* */
+/*     $(document).ready(function() {*/
+/* */
+/*     // Get the ul that holds the collection of tags*/
+/*     $collectionHolder = $('div.tags');*/
+/* */
+/*     // add the "add a tag" anchor and li to the tags ul*/
+/*     $collectionHolder.append($newLinkLi);*/
+/* */
+/*     // count the current form inputs we have (e.g. 2), use that as the new*/
+/*     // index when inserting a new item (e.g. 2)*/
+/*     $collectionHolder.data('index', $collectionHolder.find(':input').length);*/
+/*     $addTagLink.on('click', function(e) {*/
+/*         // prevent the link from creating a "#" on the URL*/
+/*         e.preventDefault();*/
+/* */
+/*         // add a new tag form (see next code block)*/
+/*         addTagForm($collectionHolder, $newLinkLi);*/
+/*     });*/
+/* });#}*/
+/*     */
+/*     */
+/*     */
+/* */
+/* function duplicateForm(index){*/
+/*     */
+/*     var formdata = $( ".tags" ).clone().appendTo( ".duplicateForm" );*/
+/*     */
+/*     $('.duplicateForm input[name="users[userdetailss][][emailId]"]');*/
+/*     */
+/*             */
+/*             var OriginalFiled = $('.duplicateForm :input[name="users[userdetailss][][emailId]"]');*/
+/*     */
+/*     */
+/*     */
+/* }*/
+/*     */
+/* </script>*/
 /*   </body>*/
 /* </html>*/
 /* */
 /* */
 /* {#{{dump(form)}}#}*/
+/* */
+/* */
 /* */
 /* */
 /* */

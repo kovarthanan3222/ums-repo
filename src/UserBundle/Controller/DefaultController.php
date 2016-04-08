@@ -5,6 +5,8 @@ namespace UserBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use UserBundle\Model\Users;
+use UserBundle\Model\Userdetails;
+use UserBundle\Model\UserdetailsType;
 use UserBundle\Model\UsersQuery;
 use UserBundle\Form\Type\UsersType;
 

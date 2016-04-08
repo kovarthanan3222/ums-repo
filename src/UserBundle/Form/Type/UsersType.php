@@ -2,10 +2,11 @@
 
 namespace UserBundle\Form\Type;
 
-//use Propel\Bundle\PropelBundle\Form\BaseAbstractType;
+use Propel\Bundle\PropelBundle\Form\BaseAbstractType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 class UsersType extends AbstractType
 {
@@ -23,7 +24,13 @@ class UsersType extends AbstractType
         $builder->add('bloodGroup');
         $builder->add('gender');
         $builder->add('dateOfBirth');
-//	$builder->add('userdetails','collection', array('type' =>  new UserdetailsType(),'by_reference' => false));
+//	$builder->add('userId','collection', array('type' =>  new UserdetailsType()));
+        $builder->add('userdetailss', 'collection', array('type' => new UserdetailsType(),
+        'allow_add' =>true,
+        'allow_delete'=>true));
+        
+        
+	
 
     }
     

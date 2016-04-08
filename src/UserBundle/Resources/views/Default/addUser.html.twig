@@ -1,4 +1,4 @@
-
+{#{{dump(form.userdetailss)}}#}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -90,13 +90,31 @@
       </div>
     </div>
       {{ form_widget(form._token) }}
-    {#<div class="control-group">
+    <div class="duplicateForm">  
+    <div class="tags">      
+    <div class="control-group">
       <!-- Username -->
-      <label class="control-label"  for="username">{{ form_label(form.emailId) }}</label>
+      <label class="control-label"  for="username">Email Id</label>
       <div class="controls">
-        {{ form_widget(form.emailId) }}
+{#        {{ form_widget(form.userdetailss.emailId) }}#}
+        {{ form_widget(form.userdetailss.vars.prototype.emailId) }}
       </div>
-    </div>#}
+    </div>
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="username">Mobile No</label>
+      <div class="controls">
+{#        {{ form_widget(form.userdetailss.emailId) }}#}
+        {{ form_widget(form.userdetailss.vars.prototype.mobileNo) }}
+      </div>
+    </div>
+      
+      
+      </div>
+      </div>
+      <input type="hidden" id="indexCount" value="1">
+      <a href="javascript:void(0)" onclick="duplicateForm(indexCount.value)"> Add Email / Mobile No</a>
+      
     <div class="control-group">
       <!-- Username -->
       
@@ -113,10 +131,60 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    
+    <script>
+    
+    {#var $collectionHolder;
+
+// setup an "add a tag" link
+    var $addTagLink = $('<a href="#" class="add_tag_link">Add Details</a>');
+    
+    var $newLinkLi = $('<li></li>').append($addTagLink);
+    
+
+    $(document).ready(function() {
+
+    // Get the ul that holds the collection of tags
+    $collectionHolder = $('div.tags');
+
+    // add the "add a tag" anchor and li to the tags ul
+    $collectionHolder.append($newLinkLi);
+
+    // count the current form inputs we have (e.g. 2), use that as the new
+    // index when inserting a new item (e.g. 2)
+    $collectionHolder.data('index', $collectionHolder.find(':input').length);
+    $addTagLink.on('click', function(e) {
+        // prevent the link from creating a "#" on the URL
+        e.preventDefault();
+
+        // add a new tag form (see next code block)
+        addTagForm($collectionHolder, $newLinkLi);
+    });
+});#}
+    
+    
+    
+
+function duplicateForm(index){
+    
+    var formdata = $( ".tags" ).clone().appendTo( ".duplicateForm" );
+    
+    $('.duplicateForm input[name="users[userdetailss][][emailId]"]');
+    
+            
+            var OriginalFiled = $('.duplicateForm :input[name="users[userdetailss][][emailId]"]');
+    
+    
+    
+}
+    
+</script>
   </body>
 </html>
 
 
 {#{{dump(form)}}#}
+
+
 
 
