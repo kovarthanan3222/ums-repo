@@ -2,11 +2,11 @@
 parameters:
     database_host: 127.0.0.1
     database_port: null
-    database_name: ums
+    database_name: umsv2
     database_user: root
     database_password: console
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null
     mailer_password: null
-    secret: fc0ef0fc817833f15dd1dff3cef1ad9c1718d25b
+    secret: ThisTokenIsNotSoSecretChangeIt

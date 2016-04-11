@@ -1,7 +1,0 @@
-user_homepage:
-    path:     /
-    defaults: { _controller: UserBundle:Default:index }
-
-user_adduser:
-    path:     /adduser
-    defaults: { _controller: UserBundle:Default:adduser }
