@@ -1,0 +1,14 @@
+user_homepage:
+    path:     /
+    defaults: { _controller: UserBundle:Default:index }
+
+user_listpage:
+    path:     /users
+    defaults: { _controller: UserBundle:User:index }
+
+user_newuserpage:
+    path:     /users/new
+    defaults: { _controller: UserBundle:User:new }
+user_editpage:
+    path:     /users/edit/{id}
+    defaults: { _controller: UserBundle:User:edit }
