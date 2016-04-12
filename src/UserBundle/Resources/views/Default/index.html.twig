@@ -16,6 +16,12 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        
+        .active{
+            	background-color: #aaa;
+        }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -43,12 +49,13 @@
 		    <td>Gender</td>
                     <td>Date Of Birth</td>
                     <td>Edit</td>
+                    <td>View</td>
                 </tr>
             </thead>
             <tbody>
                 {% for user in usersList %}
                     <tr>
-                        <td>{{ loop.index }} </td>
+                        <td>{{ (loop.index) + (2 *(pageId - 1)) }} </td>
                         <td>{{ user.firstName}}</td>
                     <td>{{ user.lastName }}</td>
                     <td>{{ user.schoolName }}</td>
@@ -57,12 +64,19 @@
                     <td>{{ user.gender }}</td>
                     <td>{{ user.dateOfBirth|date("m/d/Y") }}</td>
                     <td><a href="{{ path('user_editpage',{'id':user.id}) }}">Edit</a></td>
+                    <td><a href="{{ path('user_viewpage',{'id':user.id}) }}">View</a></td>
                     </tr>
+                    
     {% endfor %}
+    
+    
                 
             </tbody>
-
+            
         </table>
+    {% for page in usersList.getLinks  %}
+        <a {% if page == pageId %} class="active" {% endif %} href="{{ path('user_listpage',{'pageId':page}) }}">Page{{ page }}|</a>
+        {% endfor %}
 
     </div>
 

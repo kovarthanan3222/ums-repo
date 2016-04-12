@@ -3,8 +3,10 @@ user_homepage:
     defaults: { _controller: UserBundle:Default:index }
 
 user_listpage:
-    path:     /users
+    path:     /users/{pageId}
     defaults: { _controller: UserBundle:User:index }
+    requirements:
+        pageId:  \d+
 
 user_newuserpage:
     path:     /users/new
@@ -12,3 +14,11 @@ user_newuserpage:
 user_editpage:
     path:     /users/edit/{id}
     defaults: { _controller: UserBundle:User:edit }
+    requirements:
+        id:  \d+
+
+user_viewpage:
+    path:     /users/view/{id}
+    defaults: { _controller: UserBundle:User:view }
+    requirements:
+        id:  \d+

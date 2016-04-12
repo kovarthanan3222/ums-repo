@@ -10,10 +10,13 @@ use UserBundle\Form\Type\UsersType;
 
 class UserController extends Controller {
 
-    public function indexAction() {
-        $userList = UsersQuery::create()->find();
+    public function indexAction($pageId) {
+
+        $userList = UsersQuery::create()->paginate($pageId, $maxPerPage = 2);
+        
+        
         return $this->render('UserBundle:Default:index.html.twig', array(
-                    'usersList' => $userList,
+                    'usersList' => $userList, 'pageId' => $pageId
         ));
     }
 
@@ -30,8 +33,11 @@ class UserController extends Controller {
             $form->handleRequest($request);
 
             if ($form->isValid()) {
-               
                 $users->save();
+                
+                
+                
+                return $this->redirect($this->generateUrl('user_listpage',array('pageId' =>1)));
  
             }
         }
@@ -43,9 +49,9 @@ class UserController extends Controller {
     
     public function editAction($id) {
         
-        $userList = UsersQuery::create()->findPK($id);
+        $editUser = UsersQuery::create()->findPK($id);
         
-        $form = $this->createForm(new UsersType(), $userList);
+        $form = $this->createForm(new UsersType(), $editUser);
         
         $request = $this->getRequest();
         if ('POST' === $request->getMethod()) {
@@ -55,14 +61,24 @@ class UserController extends Controller {
 
             if ($form->isValid()) {
 
-                $userList->save();
+                $editUser->save();
 
-                return $this->redirect($this->generateUrl('user_listpage'));
+                return $this->redirect($this->generateUrl('user_listpage',array('pageId' =>1)));
             }
         }
         
-        return $this->render('UserBundle:Default:new.html.twig', array(
+        return $this->render('UserBundle:Default:edit.html.twig', array(
                     'form' => $form->createView(),
+        ));
+    }
+    public function viewAction($id) {
+        
+        $userDetails = UsersQuery::create()->findPK($id);
+        
+       
+        
+        return $this->render('UserBundle:Default:view.html.twig', array(
+                    'userDetails' => $userDetails,
         ));
     }
 
