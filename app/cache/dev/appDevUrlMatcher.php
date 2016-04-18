@@ -116,8 +116,8 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         if (0 === strpos($pathinfo, '/users')) {
             // user_listpage
-            if ($pathinfo === '/users') {
-                return array (  '_controller' => 'UserBundle\\Controller\\UserController::indexAction',  '_route' => 'user_listpage',);
+            if (preg_match('#^/users/(?P<pageId>\\d+)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_listpage')), array (  '_controller' => 'UserBundle\\Controller\\UserController::indexAction',));
             }
 
             // user_newuserpage
@@ -126,8 +126,13 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             // user_editpage
-            if (0 === strpos($pathinfo, '/users/edit') && preg_match('#^/users/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/users/edit') && preg_match('#^/users/edit/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_editpage')), array (  '_controller' => 'UserBundle\\Controller\\UserController::editAction',));
+            }
+
+            // user_viewpage
+            if (0 === strpos($pathinfo, '/users/view') && preg_match('#^/users/view/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_viewpage')), array (  '_controller' => 'UserBundle\\Controller\\UserController::viewAction',));
             }
 
         }

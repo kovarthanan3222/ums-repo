@@ -17,7 +17,7 @@ class userMobileType extends BaseAbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('userId');
+//        $builder->add('userId');
         $builder->add('mobileNo');
     }
 }

@@ -1,4 +1,4 @@
-{#{{dump(form.userdetailss)}}#}
+{#{{dump(form)}}#}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -90,32 +90,38 @@
       </div>
     </div>
       {{ form_widget(form._token) }}
+      
+      {% for email in form.userEmails.vars.prototype %}
+{#          {{dump(email)}}#}
+{#          {{ form_widget(email.emailId) }}#}
+          {% endfor %}
     <div class="multipleEmail">  
     <div class="emailSection">      
     <div class="control-group">
       <!-- Username -->
       <label class="control-label"  for="username">Email Id</label>
-      <div class="controls">
-        {{ form_widget(form.userEmails.vars.prototype.emailId) }}
+      <div class="controls" >
+          {{ form_widget(form.userEmails.vars.prototype) }}
       </div>
     </div>
       </div>
       </div>
       <a href="javascript:void(0)" onclick="addEmailIdForm()"> Add Email Id</a>
-      <div class="multipleMobile">  
+      
+      {#<div class="multipleMobile">  
     <div class="mobileSection">
     <div class="control-group">
       <!-- Username -->
       <label class="control-label"  for="username">Mobile No</label>
       <div class="controls">
-        {{ form_widget(form.userMobiles.vars.prototype.mobileNo) }}
+        {{ form_widget(form.userMobiles) }}
       </div>
     </div>
     
       </div>
        
       </div>
-     <a href="javascript:void(0)" onclick="addMobileNoForm()"> Add Mobile No</a>
+     <a href="javascript:void(0)" onclick="addMobileNoForm()"> Add Mobile No</a>#}
      
       
     <div class="control-group">
@@ -165,8 +171,8 @@
     });
 });#}
     
-$("#users_userEmails___name___emailId").attr("name","users[userEmails][][emailId]");
-$("#users_userMobiles___name___mobileNo").attr("name","users[userMobiles][][mobileNo]");
+{#$("#users_userEmails___name___emailId").attr("name","users[userEmails][][emailId]");
+$("#users_userMobiles___name___mobileNo").attr("name","users[userMobiles][][mobileNo]");#}
     
 
 function addMobileNoForm(){
